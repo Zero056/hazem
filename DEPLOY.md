@@ -2,7 +2,7 @@
 
 This project is already configured for GitHub Pages:
 
-- `base` in `vite.config.ts` is `/hazem-portfolio/`
+- `base` in `vite.config.ts` is `/hazem/`
 - `.github/workflows/deploy.yml` builds and publishes automatically
 - `public/404.html` provides a branded 404 page
 
@@ -11,21 +11,21 @@ This project is already configured for GitHub Pages:
 On GitHub create a **public** repository named:
 
 ```
-hazem-portfolio
+hazem
 ```
 
 Do not add a README, license or `.gitignore` — they already exist here.
 
 ## 2. Push the project
 
-Open a terminal in this folder (`hazem-portfolio`) and run:
+Open a terminal in this folder (`hazem-portfolio` locally) and run:
 
 ```bash
 git init
 git add .
 git commit -m "Initial portfolio"
 git branch -M main
-git remote add origin https://github.com/Zero056/hazem-portfolio.git
+git remote add origin https://github.com/Zero056/hazem.git
 git push -u origin main
 ```
 
@@ -46,7 +46,7 @@ Open the **Actions** tab and wait for “Deploy to GitHub Pages” to finish (ab
 Your live link is:
 
 ```
-https://Zero056.github.io/hazem-portfolio/
+https://Zero056.github.io/hazem/
 ```
 
 Send that link to anyone — it opens like a normal website.
@@ -67,10 +67,10 @@ git push
 
 The repository name must match `base` in `vite.config.ts`.
 
-- Repository `hazem-portfolio` → `base: '/hazem-portfolio/'` (current setting)
+- Repository `hazem` → `base: '/hazem/'` (current setting)
 - Repository named `Zero056.github.io` → `base: '/'`
 
-Also update the `/hazem-portfolio/` links in `public/404.html` when the name changes.
+Also update the `/hazem/` links in `public/404.html` when the name changes.
 
 ### Custom domain
 
@@ -87,7 +87,7 @@ npm run build
 npm run preview
 ```
 
-Then open `http://localhost:4173/hazem-portfolio/`.
+Then open `http://localhost:4173/hazem/`.
 
 ## What gets deployed
 

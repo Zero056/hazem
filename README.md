@@ -68,7 +68,7 @@ Everything personal lives in `src/data/portfolio.ts`:
 
 ### Before publishing
 
-1. Confirm the canonical URL and Open Graph URLs in `index.html` (`https://zero056.github.io/hazem-portfolio/`).
+1. Confirm the canonical URL and Open Graph URLs in `index.html` (`https://zero056.github.io/hazem/`).
 2. If the repository name changes, update `base` in `vite.config.ts` and the paths in `public/404.html`.
 3. `public/og.png` is the social preview image (1200×630). Edit `public/og.svg` and re-export if the artwork changes.
 

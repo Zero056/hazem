@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://zero056.github.io/hazem-portfolio/sitemap.xml
+Sitemap: https://zero056.github.io/hazem/sitemap.xml

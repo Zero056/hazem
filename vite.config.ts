@@ -1,10 +1,10 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// GitHub Pages project site: https://<user>.github.io/hazem-portfolio/
+// GitHub Pages project site: https://<user>.github.io/hazem/
 // Change `base` if the repository or account name differs.
 export default defineConfig({
-  base: '/hazem-portfolio/',
+  base: '/hazem/',
   plugins: [react()],
   build: {
     target: 'es2020',
