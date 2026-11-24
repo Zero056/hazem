@@ -7,7 +7,7 @@
  */
 
 export const site = {
-  name: 'Hazem',
+  name: 'Hazem Sharaf',
   title: 'Frappe & ERPNext Developer',
   secondaryTitle: 'Python Backend Engineer · Enterprise Application Developer',
   brandStatement:
@@ -586,7 +586,7 @@ export type Product = {
   stack: string[]
   repo: string | null
   /** One of the built-in generated visuals, or omit when using `image`. */
-  visual: 'modular' | 'ticket' | 'fleet' | 'ocr' | 'copilot'
+  visual: 'modular' | 'ticket' | 'fleet' | 'ocr' | 'copilot' | 'LogisticsCopilot'
   /** Optional real screenshot: file placed in `public/`, e.g. 'projects/app.png'. */
   image?: string | null
   /** Renders the large featured card. Only one project should set this. */
@@ -687,6 +687,30 @@ export const products: Product[] = [
     repo: null,
     visual: 'copilot',
   },
+
+{
+  id: 'logistics',
+  index: '06',
+  title: 'Logistics Intelligence',
+  kind: 'GPS & IoT Platform',
+  status: 'Under development',
+  statusTone: 'active',
+  description:
+    'A smart logistics ecosystem connecting GPS vehicle tracking, fleet management, route optimization, IoT devices, delivery operations, and real-time analytics into one unified platform.',
+  stack: [
+    'Frappe Framework',
+    'Python',
+    'JavaScript',
+    'GPS & IoT',
+    'REST APIs',
+    'MariaDB',
+  ],
+  repo: null,
+  visual: 'LogisticsCopilot',
+  featured: true,
+},
+
+
 ]
 
 /* ------------------------------------------------------------------ */
@@ -722,6 +746,12 @@ export const processSteps = [
     step: '05',
     title: 'Deliver',
     text: 'Test, refine and deliver reliable solutions — with reporting and documentation the team can operate without me.',
+    detail: 'Testing · Reports · Handover',
+  },
+    {
+    step: '06',
+    title: 'logistics',
+    text: 'Connect GPS vehicle tracking, IoT devices, and delivery operations into one unified platform.',
     detail: 'Testing · Reports · Handover',
   },
 ]

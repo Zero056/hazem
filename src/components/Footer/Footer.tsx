@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="mt-8 flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="font-display text-lg font-medium tracking-tight text-paper">
-              Hazem
+              Hazem Sharaf
               <span className="ml-2 font-mono text-[10px] uppercase tracking-[0.16em] text-muted">
                 / Frappe · ERPNext
               </span>
@@ -25,7 +25,7 @@ export default function Footer() {
             <a
               href={`mailto:${site.email}`}
               className="grid h-9 w-9 place-items-center rounded-full border border-white/10 text-muted transition hover:border-accent/30 hover:text-paper"
-              aria-label="Email Hazem"
+              aria-label="Email Hazem Sharaf"
             >
               <Mail size={15} />
             </a>
@@ -60,7 +60,7 @@ export default function Footer() {
 
         <div className="mt-8 flex flex-col gap-2 border-t border-white/[0.05] pt-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="mono text-[10px] uppercase tracking-[0.12em] text-muted/60">
-            © {new Date().getFullYear()} Hazem — All rights reserved
+            © {new Date().getFullYear()} Hazem Sharaf — All rights reserved
           </p>
           <p className="mono text-[10px] uppercase tracking-[0.12em] text-muted/50">
             Built with React · TypeScript · Motion

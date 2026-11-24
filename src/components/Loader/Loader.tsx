@@ -72,7 +72,7 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
             animate={{ y: 0 }}
             transition={{ duration: 1, ease: EASE, delay: 0.15 }}
           >
-            Hazem
+            Hazem Sharaf
           </motion.h1>
         </div>
 

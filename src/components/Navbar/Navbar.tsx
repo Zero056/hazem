@@ -114,14 +114,14 @@ export default function Navbar({ ready }: { ready: boolean }) {
               type="button"
               onClick={() => go('home')}
               className="group flex items-center gap-2.5 rounded-full px-2 py-1"
-              aria-label="Hazem — back to top"
+              aria-label="Hazem Sharaf — back to top"
             >
               <span className="relative grid h-8 w-8 place-items-center rounded-full border border-accent/30 bg-accent/10">
                 <span className="font-display text-[11px] font-semibold tracking-tight text-gold">Z0</span>
                 <span className="absolute inset-0 rounded-full bg-accent/20 opacity-0 blur-md transition group-hover:opacity-100" />
               </span>
               <span className="font-display text-[15px] font-medium tracking-tight text-paper">
-                Hazem
+                Hazem Sharaf
                 <span className="ml-1.5 hidden font-mono text-[10px] uppercase tracking-[0.14em] text-muted lg:inline">
                   / ERP
                 </span>

@@ -289,6 +289,389 @@ function Ocr() {
   )
 }
 
+
+function LogisticsCopilot() {
+  const nodes = [
+    { x: 200, y: 24, label: "GPS TRACKING", type: "gps" },
+    { x: 335, y: 75, label: "FLEET", type: "fleet" },
+    { x: 335, y: 190, label: "ROUTES", type: "route" },
+    { x: 200, y: 236, label: "IoT DEVICES", type: "iot" },
+    { x: 65, y: 190, label: "DELIVERY", type: "delivery" },
+    { x: 65, y: 75, label: "ANALYTICS", type: "analytics" },
+  ]
+
+  return (
+    <g>
+      {/* Background orbital rings */}
+      <ellipse
+        cx="200" cy="130" rx="180" ry="112"
+        fill="none"
+        stroke="rgba(245,245,247,0.045)"
+        strokeDasharray="3 7"
+      />
+
+      <ellipse
+        cx="200" cy="130" rx="135" ry="88"
+        fill="none"
+        stroke="rgba(255,138,50,0.12)"
+        strokeDasharray="2 6"
+      />
+
+      {/* Moving logistics route */}
+      <motion.ellipse
+        cx="200" cy="130" rx="112" ry="53"
+        fill="none"
+        stroke="rgba(255,138,50,0.65)"
+        strokeWidth="1.2"
+        strokeDasharray="5 7"
+        animate={{ strokeDashoffset: [0, -48] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+      />
+
+      {/* Route connection points */}
+      {[0, 1, 2, 3, 4, 5].map((i) => {
+        const angle = (Math.PI * 2 * i) / 6 - Math.PI / 2
+        return (
+          <circle
+            key={i}
+            cx={200 + Math.cos(angle) * 112}
+            cy={130 + Math.sin(angle) * 53}
+            r="2"
+            fill="#FFB85C"
+          />
+        )
+      })}
+
+      {/* Connections to logistics systems */}
+      {nodes.map((node, i) => (
+        <motion.line
+          key={i}
+          x1="200"
+          y1="130"
+          x2={node.x}
+          y2={node.y}
+          stroke="rgba(255,138,50,0.17)"
+          strokeWidth="1"
+          strokeDasharray="3 5"
+          initial={{ pathLength: 0, opacity: 0 }}
+          whileInView={{ pathLength: 1, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: i * 0.1, duration: 0.7 }}
+        />
+      ))}
+
+      {/* Digital globe */}
+      <circle
+        cx="200" cy="108" r="57"
+        fill="rgba(25,35,50,0.38)"
+        stroke="rgba(255,184,92,0.18)"
+        strokeWidth="0.8"
+      />
+
+      <ellipse
+        cx="200" cy="108" rx="27" ry="57"
+        fill="none"
+        stroke="rgba(255,184,92,0.16)"
+        strokeWidth="0.8"
+      />
+
+      <ellipse
+        cx="200" cy="108" rx="57" ry="20"
+        fill="none"
+        stroke="rgba(255,184,92,0.14)"
+        strokeWidth="0.8"
+      />
+
+      <ellipse
+        cx="200" cy="108" rx="57" ry="39"
+        fill="none"
+        stroke="rgba(255,184,92,0.12)"
+        strokeWidth="0.8"
+      />
+
+      {/* Globe longitude */}
+      <path
+        d="M150 108 Q200 65 250 108 Q200 151 150 108"
+        fill="none"
+        stroke="rgba(255,184,92,0.14)"
+        strokeWidth="0.7"
+      />
+
+      {/* GPS location pin */}
+      <motion.g
+        animate={{ y: [0, -4, 0] }}
+        transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <path
+          d="M200 67 C190 67 185 75 185 83 C185 94 200 108 200 108 C200 108 215 94 215 83 C215 75 210 67 200 67Z"
+          fill="#FF8A32"
+          stroke="#FFD6A8"
+          strokeWidth="1"
+        />
+        <circle cx="200" cy="82" r="5" fill="#17202C" />
+      </motion.g>
+
+      {/* Logistics platform */}
+      <path
+        d="M110 150 L200 119 L290 150 L200 183 Z"
+        fill="rgba(255,138,50,0.07)"
+        stroke="rgba(255,138,50,0.5)"
+        strokeWidth="1"
+      />
+
+      <path
+        d="M110 150 L110 157 L200 190 L290 157 L290 150"
+        fill="rgba(255,138,50,0.06)"
+        stroke="rgba(255,138,50,0.22)"
+        strokeWidth="0.8"
+      />
+
+      <motion.path
+        d="M110 150 L200 183 L290 150"
+        fill="none"
+        stroke="#FF8A32"
+        strokeWidth="1.5"
+        animate={{ opacity: [0.35, 1, 0.35] }}
+        transition={{ duration: 2.5, repeat: Infinity }}
+      />
+
+      {/* Truck cargo container */}
+      <path
+        d="M163 112 L238 112 L238 145 L163 145 Z"
+        fill="#343C4B"
+        stroke="#AAB1C0"
+        strokeWidth="0.8"
+      />
+
+      <path
+        d="M168 116 L233 116"
+        stroke="rgba(255,255,255,0.2)"
+        strokeWidth="0.7"
+      />
+
+      {[174, 185, 196, 207, 218, 229].map((x) => (
+        <line
+          key={x}
+          x1={x} y1="118" x2={x} y2="142"
+          stroke="rgba(255,255,255,0.12)"
+          strokeWidth="0.7"
+        />
+      ))}
+
+      {/* Truck cabin */}
+      <path
+        d="M238 125 L253 125 L265 135 L265 145 L238 145 Z"
+        fill="#626C7E"
+        stroke="#D1D5DF"
+        strokeWidth="0.8"
+      />
+
+      <path
+        d="M244 128 L252 128 L261 136 L244 136 Z"
+        fill="#172331"
+        stroke="rgba(255,184,92,0.5)"
+        strokeWidth="0.6"
+      />
+
+      {/* Truck bumper */}
+      <path
+        d="M253 145 L265 145 L265 149 L252 149 Z"
+        fill="#AAB1C0"
+      />
+
+      {/* Truck wheels */}
+      {[177, 230, 255].map((x) => (
+        <g key={x}>
+          <circle cx={x} cy="148" r="5" fill="#10141E" stroke="#8993A4" />
+          <circle cx={x} cy="148" r="2" fill="#FFB85C" />
+        </g>
+      ))}
+
+      {/* Headlights */}
+      <circle cx="263" cy="139" r="2" fill="#FFD6A8" />
+      <circle cx="263" cy="139" r="5" fill="rgba(255,184,92,0.15)" />
+
+      {/* Animated delivery signal */}
+      <motion.circle
+        cx="200" cy="130" r="68"
+        fill="none"
+        stroke="rgba(255,138,50,0.4)"
+        strokeWidth="0.8"
+        animate={{ r: [65, 78], opacity: [0.6, 0] }}
+        transition={{ duration: 2.5, repeat: Infinity }}
+      />
+
+      {/* Logistics service cards */}
+      {nodes.map((node, i) => (
+        <motion.g
+          key={node.type}
+          initial={{ opacity: 0, scale: 0.7, y: 8 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: i * 0.1, duration: 0.5 }}
+          style={{
+            transformBox: "fill-box",
+            transformOrigin: "center",
+          }}
+        >
+          {/* Card */}
+          <rect
+            x={node.x - 35}
+            y={node.y - 15}
+            width="70"
+            height="30"
+            rx="7"
+            fill="rgba(18,23,34,0.96)"
+            stroke="rgba(245,245,247,0.16)"
+            strokeWidth="0.8"
+          />
+
+          <rect
+            x={node.x - 35}
+            y={node.y + 13}
+            width="70"
+            height="2"
+            rx="1"
+            fill="rgba(255,138,50,0.5)"
+          />
+
+          {/* GPS icon */}
+          {node.type === "gps" && (
+            <g>
+              <circle cx={node.x} cy={node.y - 5} r="5"
+                fill="none" stroke="#FFB85C" strokeWidth="1.2" />
+              <circle cx={node.x} cy={node.y - 5} r="1.5" fill="#FF8A32" />
+              <path
+                d={`M${node.x - 7} ${node.y - 5} Q${node.x} ${node.y - 14} ${node.x + 7} ${node.y - 5}`}
+                fill="none" stroke="#FFB85C" strokeWidth="0.8"
+              />
+            </g>
+          )}
+
+          {/* Fleet icon */}
+          {node.type === "fleet" && (
+            <g transform={`translate(${node.x - 9},${node.y - 9})`}>
+              <rect x="0" y="1" width="12" height="7" rx="1"
+                fill="none" stroke="#FFB85C" strokeWidth="1" />
+              <path d="M12 4 H16 L19 8 H12 Z"
+                fill="none" stroke="#FFB85C" strokeWidth="1" />
+              <circle cx="4" cy="10" r="2" fill="#FF8A32" />
+              <circle cx="15" cy="10" r="2" fill="#FF8A32" />
+            </g>
+          )}
+
+          {/* Route icon */}
+          {node.type === "route" && (
+            <g>
+              <path
+                d={`M${node.x - 9} ${node.y - 6} Q${node.x + 9} ${node.y - 8} ${node.x + 7} ${node.y + 3}`}
+                fill="none" stroke="#FFB85C" strokeWidth="1.2"
+                strokeDasharray="3 2"
+              />
+              <circle cx={node.x - 9} cy={node.y - 6} r="2.5" fill="#FF8A32" />
+              <circle cx={node.x + 7} cy={node.y + 3} r="2.5" fill="#FFB85C" />
+            </g>
+          )}
+
+          {/* IoT icon */}
+          {node.type === "iot" && (
+            <g>
+              <rect x={node.x - 4} y={node.y - 8} width="8" height="9"
+                rx="2" fill="none" stroke="#FFB85C" strokeWidth="1" />
+              <circle cx={node.x} cy={node.y - 4} r="1.5" fill="#FF8A32" />
+              <path
+                d={`M${node.x - 9} ${node.y - 8} Q${node.x} ${node.y - 17} ${node.x + 9} ${node.y - 8}`}
+                fill="none" stroke="#FFB85C" strokeWidth="1"
+              />
+            </g>
+          )}
+
+          {/* Delivery icon */}
+          {node.type === "delivery" && (
+            <g>
+              <path
+                d={`M${node.x - 8} ${node.y - 7} L${node.x} ${node.y - 11} L${node.x + 8} ${node.y - 7} L${node.x} ${node.y - 3} Z`}
+                fill="none" stroke="#FFB85C" strokeWidth="1"
+              />
+              <path
+                d={`M${node.x - 8} ${node.y - 7} V${node.y + 2} L${node.x} ${node.y + 6} L${node.x + 8} ${node.y + 2} V${node.y - 7}`}
+                fill="none" stroke="#FFB85C" strokeWidth="1"
+              />
+            </g>
+          )}
+
+          {/* Analytics icon */}
+          {node.type === "analytics" && (
+            <g>
+              {[5, 10, 15].map((h, j) => (
+                <rect
+                  key={j}
+                  x={node.x - 10 + j * 7}
+                  y={node.y + 1 - h}
+                  width="4"
+                  height={h}
+                  rx="1"
+                  fill="#FFB85C"
+                  opacity={0.6 + j * 0.15}
+                />
+              ))}
+              <path
+                d={`M${node.x - 11} ${node.y + 3} L${node.x + 11} ${node.y + 3}`}
+                stroke="rgba(255,255,255,0.3)"
+              />
+            </g>
+          )}
+
+          {/* Label */}
+          <text
+            x={node.x}
+            y={node.y + 9}
+            textAnchor="middle"
+            fontSize="5.2"
+            fontFamily="'JetBrains Mono', monospace"
+            fill="rgba(245,245,247,0.8)"
+            letterSpacing="0.35"
+          >
+            {node.label}
+          </text>
+
+          {/* Active indicator */}
+          <circle
+            cx={node.x + 28}
+            cy={node.y - 9}
+            r="1.5"
+            fill="#FFB85C"
+          />
+        </motion.g>
+      ))}
+
+      {/* Floating GPS signal */}
+      <motion.g
+        animate={{ opacity: [0.3, 1, 0.3] }}
+        transition={{ duration: 2, repeat: Infinity }}
+      >
+        <circle cx="280" cy="53" r="2" fill="#FFB85C" />
+        <circle cx="280" cy="53" r="5" fill="none"
+          stroke="rgba(255,138,50,0.5)" />
+      </motion.g>
+
+      {/* Bottom status */}
+      <text
+        x="200"
+        y="258"
+        textAnchor="middle"
+        fontSize="5.5"
+        fontFamily="'JetBrains Mono', monospace"
+        fill="rgba(245,245,247,0.38)"
+        letterSpacing="1.5"
+      >
+        SMART LOGISTICS NETWORK
+      </text>
+    </g>
+  )
+}
+
+
 function Copilot() {
   const nodes = Array.from({ length: 6 }, (_, index) => {
     const angle = (Math.PI * 2 * index) / 6 - Math.PI / 2
@@ -375,6 +758,7 @@ export default function ProjectVisual({
         {variant === 'fleet' ? <Fleet /> : null}
         {variant === 'ocr' ? <Ocr /> : null}
         {variant === 'copilot' ? <Copilot /> : null}
+        {variant === 'LogisticsCopilot' ? <LogisticsCopilot /> : null}
       </svg>
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#08090D] via-transparent to-transparent opacity-70" />
     </div>
