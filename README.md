@@ -1,5 +1,4 @@
 
-<<<<<<< HEAD
 A cinematic, animation-driven portfolio for **Hazem**, a Frappe & ERPNext developer and Python backend engineer.
 
 The site presents real enterprise work — ERPNext business systems, financial workflows, customisations and reporting — alongside standalone Frappe applications and clearly-labelled product concepts.
@@ -121,5 +120,3 @@ See **[DEPLOY.md](./DEPLOY.md)** for the complete first-time setup, the shareabl
 ## License
 
 MIT — see [LICENSE](./LICENSE).
-=======
->>>>>>> c9870a5afc508ab9510aaff7745f442d24189970
