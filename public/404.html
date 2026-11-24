@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 — Page not found · Hazem</title>
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#08090D" />
+    <link rel="icon" type="image/svg+xml" href="/hazem-portfolio/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #08090d;
+        --accent: #ff8a32;
+        --gold: #ffb85c;
+        --paper: #f5f5f7;
+        --muted: #9297a5;
+      }
+      * { box-sizing: border-box; }
+      html, body { height: 100%; }
+      body {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--ink);
+        color: var(--paper);
+        font-family: Inter, system-ui, sans-serif;
+        overflow: hidden;
+      }
+      .glow {
+        position: fixed;
+        inset: 0;
+        background:
+          radial-gradient(700px 420px at 50% 35%, rgba(255, 138, 50, 0.16), transparent 62%),
+          radial-gradient(520px 340px at 78% 72%, rgba(255, 184, 92, 0.09), transparent 65%);
+        pointer-events: none;
+      }
+      .grid {
+        position: fixed;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(245, 245, 247, 0.045) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(245, 245, 247, 0.045) 1px, transparent 1px);
+        background-size: 64px 64px;
+        mask-image: radial-gradient(ellipse 80% 65% at 50% 35%, black 20%, transparent 78%);
+        -webkit-mask-image: radial-gradient(ellipse 80% 65% at 50% 35%, black 20%, transparent 78%);
+        pointer-events: none;
+      }
+      main {
+        position: relative;
+        z-index: 1;
+        max-width: 42rem;
+        padding: 2rem;
+        text-align: center;
+      }
+      .code {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.7rem;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .code b {
+        color: var(--accent);
+        font-weight: 500;
+      }
+      h1 {
+        margin: 1.5rem 0 0;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(3rem, 12vw, 7rem);
+        line-height: 0.92;
+        letter-spacing: -0.05em;
+        font-weight: 600;
+        background: linear-gradient(100deg, #ffd6a8, var(--gold) 30%, var(--accent) 70%, #ff6a1a);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      p {
+        margin: 1.25rem auto 0;
+        max-width: 26rem;
+        color: var(--muted);
+        font-size: 0.95rem;
+        line-height: 1.65;
+      }
+      a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 2rem;
+        border-radius: 999px;
+        padding: 0.85rem 1.5rem;
+        background: linear-gradient(180deg, #ffa45c, var(--accent) 55%, #f0781f);
+        color: #140b04;
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-decoration: none;
+        box-shadow: 0 14px 40px -16px rgba(255, 138, 50, 0.7);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      a:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 20px 50px -18px rgba(255, 138, 50, 0.85);
+      }
+      .mark {
+        display: inline-grid;
+        place-items: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 0.8rem;
+        border: 1px solid rgba(255, 138, 50, 0.35);
+        background: rgba(255, 138, 50, 0.08);
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 600;
+        color: var(--gold);
+      }
+      footer {
+        margin-top: 3rem;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.62rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: rgba(146, 151, 165, 0.6);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="glow"></div>
+    <div class="grid"></div>
+    <main>
+      <div class="mark">Z0</div>
+      <p class="code" style="margin-top: 1.5rem"><b>Error 404</b> · Route not found</p>
+      <h1>Off the map.</h1>
+      <p>
+        This path does not exist — the workflow ended here. Head back to the portfolio to explore
+        enterprise systems, product work and the engineering approach.
+      </p>
+      <a href="/hazem-portfolio/">Return to portfolio →</a>
+      <footer>Hazem · Frappe &amp; ERPNext Developer</footer>
+    </main>
+  </body>
+</html>
